@@ -159,7 +159,6 @@ Mobile
 }
 
 ul.sizes {
-  display:none;
   justify-content: flex-start;
   li {
     color: $vessi-green;
@@ -169,7 +168,7 @@ ul.sizes {
       height: 28px;
       margin-right: 10px;
       width: 28px;
-      &:hover, .active {
+      &:hover, &.active {
         background-color: $vessi-green;
         color: $white;
       }

@@ -9,13 +9,29 @@
     .tile{
       border: 2px solid $vessi-green;
       color: $white;
+      overflow: hidden;
       position: relative;
+      .main-image {
+        position: absolute;
+        will-change: opacity;
+        -webkit-transition: opacity 0.5s ease-out;
+           -moz-transition: opacity 0.5s ease-out;
+            -ms-transition: opacity 0.5s ease-out;
+             -o-transition: opacity 0.5s ease-out;
+                transition: opacity 0.5s ease-out;    
+        z-index: 10;             
+        &:hover { opacity: 0; }
+      }
+      img {
+        width: 100%;
+      }
       .sticker {
         background-color: $vessi-green;
         box-sizing: border-box;
         text-align: center;      
         width: auto;
-                      
+        position: absolute;
+        z-index: 50;
       }
       .quick-add-container {
         background-color: $vessi-green;
@@ -23,6 +39,7 @@
         overflow: hidden;
         position: absolute;
         width: 100%;   
+        z-index: 50;
         .quick-add {
           cursor: pointer;
           display: flex;
@@ -35,7 +52,7 @@
           top: 0;
           z-index: 100;
           &:hover { color: $transparent-white; }    
-          &.hide {
+          &.active {
             top: 100px;
           }        
         }
@@ -56,7 +73,7 @@
                 margin-right: 8px;
                 width: 23px;
                 text-align: center;
-                &:hover, .active {
+                &:hover, &.active {
                   border-color: white;
                   background-color: white;
                   color: $vessi-green;
@@ -94,7 +111,7 @@ ul.sizes {
     vertical-align: middle;
     &.box {
       text-align: center;
-      &:hover, .active {
+      &:hover, &.active {
         cursor: pointer;
       }
     }
