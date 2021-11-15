@@ -1,0 +1,113 @@
+@import 'variables.scss';
+
+/** Break points */
+
+@import 'breakpoints/base.scss';
+
+
+@media only screen and (min-width: 380px) {
+
+	// styles in 481up.scss
+	@import 'breakpoints/380.scss';
+
+} // end of media query
+
+@media only screen and (min-width: 480px) {
+
+	// styles in 481up.scss
+	@import 'breakpoints/480.scss';
+
+} // end of media query
+
+@media only screen and (min-width: 768px) {
+
+	// styles in 768up.scss
+	@import 'breakpoints/768.scss';
+
+} // end of media query
+
+
+@media only screen and (min-width: 1030px) {
+
+	// styles in 1030up.scss
+	@import 'breakpoints/1030.scss';
+
+} // end of media query
+
+@media only screen and (min-width: 1300px) {
+
+	// styles in 1300up.scss
+	@import 'breakpoints/1300.scss';
+
+} // end of media query
+
+@media only screen and (min-width: 1600px) {
+
+	// styles in 1600up.scss
+	@import 'breakpoints/1600.scss';
+
+} // end of media query
+
+
+
+
+/** Disclosure: These styles were lifted from the Vessi website to get the fonts **/
+
+@import 'type.scss';
+
+body {
+  font-size: 14px;
+  line-height: 1.6;
+  font-family: "Conv_Metropolis, Lato, "Lucida Grande", Tahoma, Sans-Serif";
+  color: $text;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%; }
+
+main {
+  max-width: 1180px;  /** max-width taken from the vessi website wrapper*/
+}
+
+
+a {
+  font-style: italic;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
+  text-decoration-line: underline;    
+  &.white {
+    color: $white;
+    text-decoration-color: $vessi-green-light;
+    &:hover { color: $transparent-white; }
+  }
+  &.green {
+    color: $vessi-green;
+    text-decoration-color: $vessi-green-light;
+    &:hover { color: $vessi-green-light; }
+  }
+}
+
+
+.close-icon {
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+  &:before, &:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 18px;
+    width: 3px;
+    background-color: $vessi-green;
+  }
+  &:before {
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
+  }
+}
+
+@import 'product.scss';

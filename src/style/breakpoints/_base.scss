@@ -1,0 +1,179 @@
+/******************************************************************
+Mobile
+******************************************************************/
+.product-group {
+  margin-top: 39px;
+  .product {
+    margin: 0 12px 8px 0;  /** margin-bottom is estimated -- no measurement could be found in figma */
+    .tile{
+      height: 205px;
+      width: 205px;
+      .sticker {
+        border: 1.7px solid $vessi-green;
+        display: inline-block;        
+        font-weight: bold;
+        font-size: 8.5px;
+        letter-spacing: 0.18em;
+        line-height: 74%;
+        margin-top: 12px;
+        text-align: center;
+        padding: 5.7px 16px 5.5px 14px;        
+      }
+      .quick-add-container {
+        height: 35px;
+        .quick-add {
+          font-weight: 500;
+          font-size: 9.6px;
+          letter-spacing: 0.05em;
+          line-height: 1.6;
+          text-align: center;
+          padding: 11px 0 10.6px 0;
+        }
+      }
+      .size-selector { display: none; }
+    }
+    .footer {
+      font-size: 12.6px;
+      line-height: 13px;
+      .info {   
+        line-height: 1.5; //style from website -- figma line-height: 22px
+        .color {
+          font-weight: 400;
+        }
+      }
+    }
+    .size-selector-modal {
+      display: none;
+      background-color: $modal-background;
+      height: 100%;
+      left: 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 8000;        
+      .panel {
+        bottom: 0;
+        background: $white;
+        min-height: 300px;
+        padding: 32px 30px 49px 30px;
+        position: absolute;
+        width: 100%;
+        .close-icon {
+          position: absolute;
+          right: 100px;
+        }
+        .content-container {
+          max-width: 450px;
+          .title {
+            color: $vessi-green;
+            font-size: 18.8px;
+            font-weight: bold;
+            letter-spacing: 0.05;
+            line-height: 26px;
+          }
+          .info-container {
+            display: flex;
+            color: $vessi-green;
+            margin-top: 27px;
+            letter-spacing: 0.05em;        
+            img {
+              width: 132px;
+              height: 132px;
+              border: 1.6px solid $vessi-green;
+            }
+            .info {
+              display: flex;
+              flex-direction: column;
+              align-content: space-between;
+              margin-left: 29px;        
+              max-width: 300px;  
+              .name {
+                font-weight: 500;
+                font-size: 18.8px;
+                line-height: 22px;
+                margin-bottom: 8px;
+              }
+              .price {
+                font-weight: 600;
+                font-size: 13.2px;
+                line-height: 18px;
+                margin-bottom: 8px;
+              }
+              .color { margin-bottom: 8px; }
+              .size { margin-bottom: 6px; }
+              .color, .size {
+                font-weight: 500;
+                font-size: 13.1878px;
+                line-height: 18px;            
+              }
+              .size-container {
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+              }
+            }
+          }
+          .add-to-cart-button {
+            position: relative;
+            width: 100%;
+            height: 55px;
+            margin-top: 20px; /** estimated height -- no reference in Figma */
+            .button{
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-color: $vessi-green;
+              color: $white;
+              height: 88%;
+              left: 0;
+              position: absolute;
+              top: 0;
+              width: 98.6%;
+              font-weight: 500;
+              font-size: 14.0578px;
+              line-height: 14px;
+              text-align: center;
+              letter-spacing: 0.08em;  
+              z-index: 1001;         
+              &:hover {
+                cursor: pointer;
+                color: $vessi-green-light;
+              }   
+            }
+            .bg{
+              position: absolute;
+              bottom: 0;
+              right: 0;
+              width: 98%;
+              height: 82%;
+              border: 2px solid $vessi-green;
+              background-color: $white;
+              z-index: 100;
+            }
+          } 
+        }        
+      }
+      &.active { display: block; }
+    }      
+  }
+}
+
+ul.sizes {
+  display:none;
+  justify-content: flex-start;
+  li {
+    color: $vessi-green;
+    line-height: 2;
+    &.box {
+      border: 1.5px solid $vessi-green;
+      height: 28px;
+      margin-right: 10px;
+      width: 28px;
+      &:hover, .active {
+        background-color: $vessi-green;
+        color: $white;
+      }
+      &:last-child { margin-right: 0; }
+    }
+  }
+} 

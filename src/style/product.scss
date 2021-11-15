@@ -1,0 +1,102 @@
+.product-group {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  .product {
+    font-family: Conv_Metropolis;
+    font-style: normal;
+    text-transform: uppercase;
+    .tile{
+      border: 2px solid $vessi-green;
+      color: $white;
+      position: relative;
+      .sticker {
+        background-color: $vessi-green;
+        box-sizing: border-box;
+        text-align: center;      
+        width: auto;
+                      
+      }
+      .quick-add-container {
+        background-color: $vessi-green;
+        bottom: 0;
+        overflow: hidden;
+        position: absolute;
+        width: 100%;   
+        .quick-add {
+          cursor: pointer;
+          display: flex;
+          font-style: normal;
+          justify-content: center;
+          margin: 0 auto;
+          position: absolute;
+          text-align: center;     
+          width: 100%;   
+          top: 0;
+          z-index: 100;
+          &:hover { color: $transparent-white; }    
+          &.hide {
+            top: 100px;
+          }        
+        }
+        .size-selector {
+          ul.sizes {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            justify-content: center;
+            li {
+              color: $transparent-white;
+              display: inline-block;
+              line-height: 1.8;
+              vertical-align: middle;
+              &.box {
+                border: 2px solid $transparent-white;
+                height: 23px;
+                margin-right: 8px;
+                width: 23px;
+                text-align: center;
+                &:hover, .active {
+                  border-color: white;
+                  background-color: white;
+                  color: $vessi-green;
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .footer {
+      color: $vessi-green;          
+      text-align: left;           
+      .info {   
+        .name { display: block; }
+        .color {
+          display: block;
+          color: $vessi-green-light;
+        }
+        .price { display: block; }
+      }
+    }
+  }
+}
+
+ul.sizes {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin:0;
+  li {
+    display: inline-block;
+    vertical-align: middle;
+    &.box {
+      text-align: center;
+      &:hover, .active {
+        cursor: pointer;
+      }
+    }
+  }
+} 
