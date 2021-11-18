@@ -1,65 +1,72 @@
-<div class="product">
-    <div class="tile">
-      <ng-container *ngIf="shoe.bestSeller">
-        <span class="sticker">Best seller</span>
+<article class="product">
+  <div class="tile">
+    <ng-container *ngIf="shoe.bestSeller">
+      <span class="sticker">Best seller</span>
+      </ng-container>
+      <ng-container *ngIf="shoe.new">
+        <span class="sticker">New</span>
         </ng-container>
-        <ng-container *ngIf="shoe.new">
-          <span class="sticker">New</span>
+          <img alt="{{shoe.name}}" src="/asset/{{shoe.image1}}" class="main-image"/>
+    <img alt="{{shoe.name}}" src="/asset/{{shoe.image2}}" class="action-image"/>
+    <div class="quick-add-container">
+      <div [ngClass]="{'active': isQuickAdd, 'quick-add': true}"
+            title="Quick add" 
+            aria-label="Quick add"
+            (click)="toggleIsQuickAdd()">Quick add</div>
+      <div [ngClass]="{'active': isQuickAdd, 'size-selector': true}">
+        <ul class="sizes">
+          <ng-container  *ngFor="let size of shoe.sizes">
+          <li 
+            class="box" 
+            title="Size {{size}}" 
+            aria-label="Size {{size}}"
+            (click)="toggleIsQuickAdd()"
+            >{{size}}</li>
           </ng-container>
-            <img alt="{{shoe.name}}" src="/asset/{{shoe.image1}}" class="main-image"/>
-      <img alt="{{shoe.name}}" src="/asset/{{shoe.image2}}" class="action-image"/>
-      <div class="quick-add-container">
-        <div [ngClass]="{'active': isQuickAdd, 'quick-add': true}"
-              title="Quick add" 
-              (click)="toggleIsQuickAdd()">Quick add</div>
-        <div [ngClass]="{'active': isQuickAdd, 'size-selector': true}">
-          <ul class="sizes">
-            <ng-container  *ngFor="let size of shoe.sizes">
-            <li class="box" title="Size {{size}}" (click)="toggleIsQuickAdd()">{{size}}</li>
-            </ng-container>
-            <li><a href="/" title="Fit guide" class="white">Fit Guide</a></li>
-          </ul>
-        </div>
+          <li><a href="/" title="Fit guide" aria-label="Fit guide" class="white">Fit Guide</a></li>
+        </ul>
       </div>
     </div>
-    <div class="footer">
-        <p class="info">
-          <span class="name">{{shoe.name}}</span>
-          <span class="color">{{shoe.color}}</span>
-          <span class="price">{{shoe.price}}</span>
-      </p>
-    </div>
-    <div [ngClass]="{'active': isQuickAdd, 'size-selector-modal': true}">
-      <div class="panel">
-        <div class="close-icon" title="Close quick add" (click)="toggleIsQuickAdd()"></div>
-        <div class="content-container">
-          <span class="title">Quick Add</span>
-          <div class="info-container">
-            <img src="asset/{{shoe.image1}}" alt="{{shoe.name}}"/>
-            <div class="info">
-              <div class="name">{{shoe.name}}</div>
-              <div class="price">{{shoe.price}}</div>
-              <div class="color">Colour: {{shoe.color}}</div>
-              <div class="size-container">
-                <span class="size">Size: {{sizeSelected}}</span>
-                <a href="/" title="Fit Guide" class="green">Fit guide</a>
-              </div>
-              <ul class="sizes">
-                <ng-container  *ngFor="let size of shoe.sizes">
-                <li class="box" 
-                    title="Size {{size}}" 
-                    (click)="sizeSelected = size"
-                    [ngClass]="{'active': (sizeSelected === size)}"
-                    >{{size}}</li>
-                </ng-container>
-            </ul>
+  </div>
+  <div class="footer">
+      <p class="info">
+        <span class="name">{{shoe.name}}</span>
+        <span class="color">{{shoe.color}}</span>
+        <span class="price">{{shoe.price}}</span>
+    </p>
+  </div>
+  <div [ngClass]="{'active': isQuickAdd, 'size-selector-modal': true}">
+    <div class="panel">
+      <div class="close-icon" title="Close quick add" aria-label="Close" (click)="toggleIsQuickAdd()"></div>
+      <div class="content-container">
+        <span class="title">Quick Add</span>
+        <div class="info-container">
+          <img src="asset/{{shoe.image1}}" alt="{{shoe.name}}"/>
+          <div class="info">
+            <div class="name">{{shoe.name}}</div>
+            <div class="price">{{shoe.price}}</div>
+            <div class="color">Colour: {{shoe.color}}</div>
+            <div class="size-container">
+              <span class="size">Size: {{sizeSelected}}</span>
+              <a href="/" title="Fit Guide" aria-label="Fit Guide" class="green">Fit guide</a>
             </div>
+            <ul class="sizes">
+              <ng-container  *ngFor="let size of shoe.sizes">
+              <li class="box" 
+                  title="Size {{size}}" 
+                  aria-label="Size {{size}}"
+                  (click)="sizeSelected = size"
+                  [ngClass]="{'active': (sizeSelected === size)}"
+                  >{{size}}</li>
+              </ng-container>
+          </ul>
           </div>
-          <div class="add-to-cart-button" title="Add to cart">
-            <div class="button" (click)="toggleIsQuickAdd()"><span>Add to cart | {{shoe.price}}</span></div>
-            <div class="bg"></div>
-          </div>
+        </div>
+        <div class="add-to-cart-button" title="Add to cart">
+          <div class="button" (click)="toggleIsQuickAdd()" aria-label="Add to cart"><span>Add to cart | {{shoe.price}}</span></div>
+          <div class="bg"></div>
         </div>
       </div>
     </div>
   </div>
+</article>

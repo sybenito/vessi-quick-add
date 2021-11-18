@@ -7,8 +7,8 @@ const Shoes = () => {
       sizes: [5,6,7,8,9,10,11],
       image1: "Everyday2.0SkyBlue-_SideView-WhiteBG-WithShadow_e7614d99-29f8-4be1-b4a1-f1a12879cf38.jpg",
       image2: "Women-SKy.jpg",
-      bestSeller: true,
-      new: false
+      isBestSeller: true,
+      isNew: false
     },
     {
       name: "WOMEN'S EVERYDAY MOVE",
@@ -17,8 +17,8 @@ const Shoes = () => {
       sizes: [7,8,9,10,11],
       image1: "Everyday2.0PolarWhite-_SideView-WhiteBG-WithShadow.jpg",
       image2: "Women-Polar.jpg",
-      bestSeller: false,
-      new: false
+      isBestSeller: false,
+      isNew: false
     },{
       name: "WOMEN'S EVERYDAY MOVE",
       price: "$130.35 CAD",
@@ -26,8 +26,8 @@ const Shoes = () => {
       sizes: [5,6,7,8,9,10],
       image1: "Everyday2.0LavenderPurple-_SideView-WhiteBG-WithShadow_1_4ddec50b-0def-4d2a-8f0b-7c53dfa8bd20.jpg",
       image2: "Women-Purple.jpg",
-      bestSeller: false,
-      new: false
+      isBestSeller: false,
+      isNew: false
     },{
       name: "WOMEN'S EVERYDAY MOVE",
       price: "$120.35 CAD",
@@ -35,8 +35,8 @@ const Shoes = () => {
       sizes: [5,6,7,8,9,10,11],
       image1: "Everyday2.0LinenBeige-_SideView-WhiteBG-WithShadow.jpg",
       image2: "Women-linen.jpg",
-      bestSeller: true,
-      new: false
+      isBestSeller: true,
+      isNew: false
     },{
       name: "WOMEN'S EVERYDAY MOVE",
       price: "$120.35 CAD",
@@ -44,8 +44,8 @@ const Shoes = () => {
       sizes: [4,5,6,7,8,9,10,11],
       image1: "Everyday2.0OnyxBlack-_SideView-WhiteBG-WithShadow.jpg",
       image2: "Women-Onyx.jpg",
-      bestSeller: false,
-      new: true
+      isBestSeller: false,
+      isNew: true
     }
   ]
 }
